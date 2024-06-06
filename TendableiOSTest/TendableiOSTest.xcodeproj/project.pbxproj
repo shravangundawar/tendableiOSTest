@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		08365A5C2C107A6200DADE57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08365A5B2C107A6200DADE57 /* AppDelegate.swift */; };
 		08365A5E2C107A6200DADE57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08365A5D2C107A6200DADE57 /* SceneDelegate.swift */; };
-		08365A602C107A6200DADE57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08365A5F2C107A6200DADE57 /* ViewController.swift */; };
 		08365A632C107A6200DADE57 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 08365A622C107A6200DADE57 /* Base */; };
 		08365A662C107A6200DADE57 /* TendableiOSTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08365A642C107A6200DADE57 /* TendableiOSTest.xcdatamodeld */; };
 		08365A682C107A6300DADE57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08365A672C107A6300DADE57 /* Assets.xcassets */; };
@@ -17,6 +16,12 @@
 		08365A762C107A6300DADE57 /* TendableiOSTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08365A752C107A6300DADE57 /* TendableiOSTestTests.swift */; };
 		08365A802C107A6300DADE57 /* TendableiOSTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08365A7F2C107A6300DADE57 /* TendableiOSTestUITests.swift */; };
 		08365A822C107A6300DADE57 /* TendableiOSTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08365A812C107A6300DADE57 /* TendableiOSTestUITestsLaunchTests.swift */; };
+		08365A942C107D3900DADE57 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08365A932C107D3900DADE57 /* SurveyViewController.swift */; };
+		08365A972C107EF000DADE57 /* InspectionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08365A962C107EF000DADE57 /* InspectionDataModel.swift */; };
+		083AF8BF2C10818300C78F96 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AF8BE2C10818300C78F96 /* NetworkManager.swift */; };
+		083AF8C22C10829500C78F96 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AF8C12C10829500C78F96 /* AppConstants.swift */; };
+		083AF8C42C10835F00C78F96 /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AF8C32C10835F00C78F96 /* SurveyViewModel.swift */; };
+		08731B892C11BA3300638D61 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08731B882C11BA3300638D61 /* UserDefaultManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +45,6 @@
 		08365A582C107A6200DADE57 /* TendableiOSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TendableiOSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08365A5B2C107A6200DADE57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08365A5D2C107A6200DADE57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08365A5F2C107A6200DADE57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		08365A622C107A6200DADE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08365A652C107A6200DADE57 /* TendableiOSTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TendableiOSTest.xcdatamodel; sourceTree = "<group>"; };
 		08365A672C107A6300DADE57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,12 @@
 		08365A7B2C107A6300DADE57 /* TendableiOSTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TendableiOSTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08365A7F2C107A6300DADE57 /* TendableiOSTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendableiOSTestUITests.swift; sourceTree = "<group>"; };
 		08365A812C107A6300DADE57 /* TendableiOSTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendableiOSTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		08365A932C107D3900DADE57 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
+		08365A962C107EF000DADE57 /* InspectionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionDataModel.swift; sourceTree = "<group>"; };
+		083AF8BE2C10818300C78F96 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		083AF8C12C10829500C78F96 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		083AF8C32C10835F00C78F96 /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
+		08731B882C11BA3300638D61 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +111,14 @@
 		08365A5A2C107A6200DADE57 /* TendableiOSTest */ = {
 			isa = PBXGroup;
 			children = (
-				08365A5B2C107A6200DADE57 /* AppDelegate.swift */,
+				083AF8C02C10827900C78F96 /* App Utility */,
+				083AF8BC2C10816C00C78F96 /* Manager */,
+				08365A902C107CBD00DADE57 /* Model */,
+				08365A8F2C107CB300DADE57 /* View */,
+				08365A8E2C107C6A00DADE57 /* ViewModel */,
+				08365A952C107D4A00DADE57 /* Controller */,
 				08365A5D2C107A6200DADE57 /* SceneDelegate.swift */,
-				08365A5F2C107A6200DADE57 /* ViewController.swift */,
-				08365A612C107A6200DADE57 /* Main.storyboard */,
+				08365A5B2C107A6200DADE57 /* AppDelegate.swift */,
 				08365A672C107A6300DADE57 /* Assets.xcassets */,
 				08365A692C107A6300DADE57 /* LaunchScreen.storyboard */,
 				08365A6C2C107A6300DADE57 /* Info.plist */,
@@ -128,6 +142,55 @@
 				08365A812C107A6300DADE57 /* TendableiOSTestUITestsLaunchTests.swift */,
 			);
 			path = TendableiOSTestUITests;
+			sourceTree = "<group>";
+		};
+		08365A8E2C107C6A00DADE57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				083AF8C32C10835F00C78F96 /* SurveyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		08365A8F2C107CB300DADE57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08365A612C107A6200DADE57 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08365A902C107CBD00DADE57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				08365A962C107EF000DADE57 /* InspectionDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		08365A952C107D4A00DADE57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				08365A932C107D3900DADE57 /* SurveyViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		083AF8BC2C10816C00C78F96 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				083AF8BE2C10818300C78F96 /* NetworkManager.swift */,
+				08731B882C11BA3300638D61 /* UserDefaultManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		083AF8C02C10827900C78F96 /* App Utility */ = {
+			isa = PBXGroup;
+			children = (
+				083AF8C12C10829500C78F96 /* AppConstants.swift */,
+			);
+			path = "App Utility";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +324,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08365A602C107A6200DADE57 /* ViewController.swift in Sources */,
+				083AF8C42C10835F00C78F96 /* SurveyViewModel.swift in Sources */,
+				08365A972C107EF000DADE57 /* InspectionDataModel.swift in Sources */,
 				08365A5C2C107A6200DADE57 /* AppDelegate.swift in Sources */,
+				083AF8C22C10829500C78F96 /* AppConstants.swift in Sources */,
+				083AF8BF2C10818300C78F96 /* NetworkManager.swift in Sources */,
 				08365A662C107A6200DADE57 /* TendableiOSTest.xcdatamodeld in Sources */,
+				08731B892C11BA3300638D61 /* UserDefaultManager.swift in Sources */,
 				08365A5E2C107A6200DADE57 /* SceneDelegate.swift in Sources */,
+				08365A942C107D3900DADE57 /* SurveyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
