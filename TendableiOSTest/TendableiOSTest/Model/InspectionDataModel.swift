@@ -59,3 +59,20 @@ struct AnswerChoice: Codable {
     let name: String
     let score: Double
 }
+
+
+//MARK: ResponseHandler Model
+
+struct SurveyData: Codable {
+    let inspection: SurveyDetails
+}
+
+struct SurveyDetails: Codable {
+    let id: Int
+    let answeredQuestions: [Question]
+}
+
+struct ResponseData: Decodable {
+    let success: Bool
+    let message: String
+}

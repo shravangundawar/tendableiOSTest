@@ -22,6 +22,9 @@
 		083AF8C22C10829500C78F96 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AF8C12C10829500C78F96 /* AppConstants.swift */; };
 		083AF8C42C10835F00C78F96 /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AF8C32C10835F00C78F96 /* SurveyViewModel.swift */; };
 		08731B892C11BA3300638D61 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08731B882C11BA3300638D61 /* UserDefaultManager.swift */; };
+		08731B8B2C11E74200638D61 /* AppActivityLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08731B8A2C11E74200638D61 /* AppActivityLoader.swift */; };
+		08731B8E2C11E7E300638D61 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08731B8D2C11E7E300638D61 /* UIViewControllerExtension.swift */; };
+		08731B902C11EEE700638D61 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08731B8F2C11EEE700638D61 /* NetworkReachabilityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		083AF8C12C10829500C78F96 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		083AF8C32C10835F00C78F96 /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
 		08731B882C11BA3300638D61 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		08731B8A2C11E74200638D61 /* AppActivityLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActivityLoader.swift; sourceTree = "<group>"; };
+		08731B8D2C11E7E300638D61 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		08731B8F2C11EEE700638D61 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 		08365A5A2C107A6200DADE57 /* TendableiOSTest */ = {
 			isa = PBXGroup;
 			children = (
+				08731B8C2C11E7CE00638D61 /* Extensions */,
 				083AF8C02C10827900C78F96 /* App Utility */,
 				083AF8BC2C10816C00C78F96 /* Manager */,
 				08365A902C107CBD00DADE57 /* Model */,
@@ -181,6 +188,7 @@
 			children = (
 				083AF8BE2C10818300C78F96 /* NetworkManager.swift */,
 				08731B882C11BA3300638D61 /* UserDefaultManager.swift */,
+				08731B8F2C11EEE700638D61 /* NetworkReachabilityManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -189,8 +197,17 @@
 			isa = PBXGroup;
 			children = (
 				083AF8C12C10829500C78F96 /* AppConstants.swift */,
+				08731B8A2C11E74200638D61 /* AppActivityLoader.swift */,
 			);
 			path = "App Utility";
+			sourceTree = "<group>";
+		};
+		08731B8C2C11E7CE00638D61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				08731B8D2C11E7E300638D61 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				083AF8C42C10835F00C78F96 /* SurveyViewModel.swift in Sources */,
+				08731B8B2C11E74200638D61 /* AppActivityLoader.swift in Sources */,
 				08365A972C107EF000DADE57 /* InspectionDataModel.swift in Sources */,
 				08365A5C2C107A6200DADE57 /* AppDelegate.swift in Sources */,
 				083AF8C22C10829500C78F96 /* AppConstants.swift in Sources */,
@@ -332,6 +350,8 @@
 				08365A662C107A6200DADE57 /* TendableiOSTest.xcdatamodeld in Sources */,
 				08731B892C11BA3300638D61 /* UserDefaultManager.swift in Sources */,
 				08365A5E2C107A6200DADE57 /* SceneDelegate.swift in Sources */,
+				08731B8E2C11E7E300638D61 /* UIViewControllerExtension.swift in Sources */,
+				08731B902C11EEE700638D61 /* NetworkReachabilityManager.swift in Sources */,
 				08365A942C107D3900DADE57 /* SurveyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

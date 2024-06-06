@@ -8,7 +8,7 @@
 import UIKit
 
 class SurveyViewController: UIViewController {
-
+    //MARK: IBOutlets
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var optionOneButton: UIButton!
     @IBOutlet weak var optionTwoButton: UIButton!
@@ -18,17 +18,22 @@ class SurveyViewController: UIViewController {
     @IBOutlet weak var totalScoreLabel: UILabel!
     @IBOutlet weak var scoreBackgroundView: UIView!
     
+    //MARK: Properties
     var surveyVM: SurveyViewModel?
     var questioNumber: Int = 0
     var selectedAnswer: Int = -1
+    
+    //MARK: UI View Controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLoader()
         setupUI()
         surveyVM = SurveyViewModel()
         surveyVM?.delegate = self
         surveyVM?.prepareQuestionData()
     }
     
+    //MARK: Methods
     func setupUI() {
         setupButtonCornerAndColor()
         resetButtons()
@@ -56,7 +61,7 @@ class SurveyViewController: UIViewController {
         let buttons = [optionOneButton, optionTwoButton, optionThreeButton]
         for button in buttons {
             button?.isSelected = false
-            button?.backgroundColor = .lightGray
+            button?.backgroundColor = .white
         }
         selectedAnswer = -1
     }
@@ -82,59 +87,92 @@ class SurveyViewController: UIViewController {
         }
         
         //Other customisations
-        backgroundView.backgroundColor = .orange
+        scoreBackgroundView.layer.borderWidth = 2.0
+        scoreBackgroundView.layer.borderColor = UIColor.white.cgColor
         scoreBackgroundView.isHidden = true
     }
     
     @IBAction func answerOptionButtonTapped(_ sender: UIButton) {
         resetButtons()
         sender.isSelected = true
-        sender.backgroundColor = .green
+        sender.backgroundColor = UIColor(displayP3Red: 68/255, green: 209/255, blue: 254/255, alpha: 1)
         selectedAnswer = sender.tag
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         guard selectedAnswer >= 0 else { return }
         guard let questionData = surveyVM?.questionsArray else { return }
-        let selectedAnswer = questionData[(questioNumber)].answerChoices[(selectedAnswer)]
-        surveyVM?.calculateScore(selectedOption: selectedAnswer)
+        let currentQuestion = questionData[questioNumber]
+        surveyVM?.calculateScore(currentQuestion: currentQuestion, selectedAnswer: selectedAnswer)
         resetButtons()
 
         if questioNumber == (questionData.count - 1) { //last question
-            backgroundView.removeFromSuperview()
-            scoreBackgroundView.isHidden = false
-            totalScoreLabel.text = String(describing: surveyVM?.totalScore ?? 0.0)
+            showLoader()
+            surveyVM?.submitSurvey()
         } else {
             questioNumber += 1
             if (questioNumber) < questionData.count {
                 if (questioNumber) == (questionData.count - 1) {
-                    nextButton.setTitle("Submit", for: .normal)
+                    nextButton.setTitle(AppConstants.UIConstants.submit, for: .normal)
+                    nextButton.backgroundColor = UIColor(displayP3Red: 68/255, green: 209/255, blue: 254/255, alpha: 1)
                 }
                 showQuestionDetails(index: (questioNumber))
             } else {
                 backgroundView.isHidden = true
             }
-        }
-        
-        UIView.animate(withDuration: 0.5, delay: 0.3, options: UIView.AnimationOptions(), animations: { [weak self] in
+            surveyVM?.setCurrentQuestionNumber(questionNumber: questioNumber)
             
-            if self?.questioNumber != (questionData.count) { //last question
-                self?.backgroundView.frame = CGRect(x: -(self?.view.frame.size.width ?? 0.0), y: 0, width: self?.view.frame.size.width ?? 0.0 ,height: self?.view.frame.size.height ?? 0.0)
+            UIView.animate(withDuration: 0.5, delay: 0.3, options: UIView.AnimationOptions(), animations: { [weak self] in
+                
+                if self?.questioNumber != (questionData.count) { //last question
+                    self?.backgroundView.frame = CGRect(x: -(self?.view.frame.size.width ?? 0.0), y: 0, width: self?.view.frame.size.width ?? 0.0 ,height: self?.view.frame.size.height ?? 0.0)
+                }
+            }) { _ in
             }
-        }) { _ in
-
         }
     }
 }
 
 extension SurveyViewController: SurveyViewModelDelegate {
+    func didSubmitSurveySuccess() {
+        DispatchQueue.main.async { [weak self] in
+            self?.hideLoader()
+            self?.surveyVM?.resetSurveyLocalData()
+            self?.backgroundView.removeFromSuperview()
+            self?.scoreBackgroundView.isHidden = false
+            self?.totalScoreLabel.text = String(describing: self?.surveyVM?.totalScore ?? 0.0)
+        }
+    }
+    
+    func didSubmitSurveyFail() {
+        DispatchQueue.main.async { [weak self] in
+            self?.hideLoader()
+            self?.surveyVM?.resetSurveyLocalData()
+            self?.backgroundView.removeFromSuperview()
+            self?.scoreBackgroundView.isHidden = false
+            self?.totalScoreLabel.text = String(describing: self?.surveyVM?.totalScore ?? 0.0)
+        }
+    }
+    
     func didQuestionPrepareSuccess() {
-        DispatchQueue.main.async {[weak self] in
+        DispatchQueue.main.async { [weak self] in
+            self?.hideLoader()
+            self?.questioNumber = self?.surveyVM?.getLastQuestionNumber() ?? 0
             self?.showQuestionDetails(index: (self?.questioNumber)!)
         }
     }
     
     func didQuestionPrepareFail() {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.hideLoader()
+        }
+    }
+    
+    func didNetworkErrorOccure() {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: AppConstants.UIConstants.noInternetTitle, message: AppConstants.UIConstants.noInternetMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: AppConstants.UIConstants.ok, style: .default))
+            self?.present(alert, animated: true)
+        }
     }
 }

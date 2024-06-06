@@ -41,12 +41,12 @@ extension Int: UserDefaultCompatible {
     }
 }
 
-extension String: UserDefaultCompatible {
-    static func get(from userDefaults: UserDefaults, forKey key: String) -> String? {
-        return userDefaults.string(forKey: key)
+extension Double: UserDefaultCompatible {
+    static func get(from userDefaults: UserDefaults, forKey key: String) -> Double? {
+        return userDefaults.double(forKey: key)
     }
     
-    static func set(_ value: String?, in userDefaults: UserDefaults, forKey key: String) {
+    static func set(_ value: Double?, in userDefaults: UserDefaults, forKey key: String) {
         userDefaults.set(value, forKey: key)
     }
 }

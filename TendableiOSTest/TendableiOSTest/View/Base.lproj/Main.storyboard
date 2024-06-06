@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,7 +52,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <color key="backgroundColor" red="0.3958333518126837" green="0.83106362173310033" blue="0.84258943796157837" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="YSL-Fy-mXR" firstAttribute="leading" secondItem="tzJ-NO-K47" secondAttribute="leading" id="5UE-2y-EPY"/>
                                     <constraint firstItem="YSL-Fy-mXR" firstAttribute="trailing" secondItem="tzJ-NO-K47" secondAttribute="trailing" id="9Oh-up-qQc"/>
@@ -140,7 +139,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.81950696431050318" green="0.94510010318381465" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Zko-br-VcR" firstAttribute="leading" secondItem="mln-7G-lhG" secondAttribute="leading" constant="15" id="52S-sE-9Mb"/>
                                     <constraint firstItem="Zko-br-VcR" firstAttribute="top" secondItem="mln-7G-lhG" secondAttribute="top" constant="40" id="53O-cx-yjN"/>
@@ -155,7 +154,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.26814205427559057" green="0.81809953726878781" blue="0.99616607638443411" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5Ww-tr-qgn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EW7-Yh-lww"/>
                             <constraint firstItem="7bn-l2-q7n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="I4j-R2-1zU"/>
@@ -185,11 +184,5 @@
     <resources>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="squareshape" catalog="system" width="128" height="114"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
